@@ -1,0 +1,21 @@
+#app{
+    font-family: 'Poppins', sans-serif;
+}
+.router-link-exact-active{
+    font-weight:500;
+}
+.btn-success{
+    background-color: #B80000;
+}
+.badge-success{
+    background-color: #FAEF5D;
+}
+
+.card-product{
+    border-radius: 15px;
+}
+
+.card-img-top{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
