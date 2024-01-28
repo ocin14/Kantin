@@ -10,7 +10,7 @@ import footer from './components/footer.vue';
 
 export default{
   components:{
-    footer
+    
   }
 }
 </script>
