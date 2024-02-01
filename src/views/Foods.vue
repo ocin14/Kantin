@@ -10,9 +10,18 @@
 <div class="row mt-3">
   <div class="col">
     <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">@</span>
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      
+    <input
+    v-model="search" 
+    type="text" class="form-control" placeholder="Cari Makanan kesukaan ada" aria-label="Cari" aria-describedby="basic-addon1"
+    @keyup="searchFood"
+    >
+    <span class="input-group-text" id="basic-addon1">
+      <b-icon-search></b-icon-search>
+    </span>
   </div>
+
+  
   </div>
 </div>
     <div class="row mb-4">
@@ -39,15 +48,24 @@ export default {
   data(){
     return{
       products: [],
+      search: '',
     };
   },
   methods: {
     setProducts(data){
       this.products = data;
     },
+    searchFood(){
+      axios.get('http://localhost:3000/products?q='+this.search)
+    .then((response) => 
+      // handle success
+      this.setProducts(response.data))
+    .catch((error) =>  console.log(error))
+      // handle error
+    }
   },
   mounted() {
-  axios.get('http://localhost:4000/products')
+  axios.get('http://localhost:3000/products')
     .then((response) => 
       // handle success
       this.setProducts(response.data))
