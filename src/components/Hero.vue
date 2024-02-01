@@ -8,7 +8,7 @@
             <div class="justify-content-center align-self-center">
               <h3><strong>Delicious Food Menu,</strong><br> In Your Gadget</h3>
               <p>"Kelezatan autentik dari dapur kami ke lidah Anda"</p>
-              <button class="btn btn-lg btn-success" style="background-color: #B80000;">Pesan <b-icon-arrow-right></b-icon-arrow-right></button>
+              <router-link class="btn btn-lg btn-success" to="/Foods" style="background-color: #B80000;">Pesan <b-icon-arrow-right></b-icon-arrow-right></router-link>
             </div>
           </div>
         </div>
@@ -29,7 +29,8 @@
             <div class="justify-content-center align-self-center">
               <h3><strong>Delicious Food Menu,</strong><br> In Your Gadget</h3>
               <p>"Kelezatan autentik dari dapur kami ke lidah Anda"</p>
-              <button class="btn btn-lg btn-success" style="background-color: #B80000;">Pesan <b-icon-arrow-right></b-icon-arrow-right></button>
+               <router-link  class="btn btn-lg btn-success" to="/Foods"><b-icon-arrow-right></b-icon-arrow-right> 
+              </router-link>
             </div>
           </div>
         </div>
