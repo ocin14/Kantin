@@ -56,7 +56,7 @@ export default {
       this.products = data;
     },
     searchFood(){
-      axios.get('http://localhost:3000/products?q='+this.search)
+      axios.get('http://localhost:3000/products?nama='+this.search)
     .then((response) => 
       // handle success
       this.setProducts(response.data))
