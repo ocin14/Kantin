@@ -7,13 +7,14 @@
         <h2>Daftar <strong>Makanan</strong></h2>
       </div>
     </div>
-
 <div class="row mt-3">
   <div class="col">
-    
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
   </div>
 </div>
-
     <div class="row mb-4">
       <div class="col-md-4 mt-4" v-for="product in products" :key="product.id">
       <cardproduct :product="product"/>
