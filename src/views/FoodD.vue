@@ -20,25 +20,14 @@
                 <div class="col-md-5" style="top: 10px;">
                     <h2><strong>{{ product.nama }}</strong></h2>
                     <h4>Harga: <strong>Rp. {{ product.harga }}</strong></h4>
-                    <form action="">
-                        <label for="Jumlah_pesan">Qty</label>
-                        <div class="form-row align-items-center">
-                            
-                        <div class="col-auto my-1">
-                        
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                            <option selected></option>
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                        </select>
-                        </div>
-                        </div>
+                    <form class="mt-4" v-on:submit.prevent>
+                        <label for="jumlah_pesan">Jumlah Pesan</label>
+                        <input type="number" class="form-control" v-model="pesan.jumlah_pesan">
                         <div class="form-group">
                             <label for="keterangan">keterangan</label>
-                            <textarea class="form-control" placeholder="Pedes, Tidak pedes"  ></textarea>
+                            <textarea v-model="pesan.keterangan" class="form-control" placeholder="Pedes, Tidak pedes"  ></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success">
+                        <button type="submit" class="btn btn-success" @click="pemesanan">
                             <b-icon-cart></b-icon-cart> Pesan
                         </button>
                     </form>
@@ -59,12 +48,23 @@ export default {
   },
   data(){
     return{
-        product: {}
+        product: {},
+        pesan: {}
     }
   },
   methods: {
     setProduct(data){
-        this.product = data
+        this.product = data;
+    },
+    pemesanan(){
+        // console.log(this.pesan);
+        this.pesan.product = this.product;
+        axios
+        .post("http://localhost:3000/keranjangs", this.pesan)
+        .then(()=>{
+            console.log("berhasil");
+        })
+        .catch((error)=> console.log(error))
     }
   },
   mounted(){

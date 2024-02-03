@@ -5,7 +5,7 @@ import Foods from '../views/Foods.vue';
 import FoodD from '../views/FoodD.vue';
 
 Vue.use(VueRouter)
-
+import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
@@ -32,10 +32,10 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
 
 export default router

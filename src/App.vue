@@ -6,15 +6,7 @@
   </div>
 </template>
 
-<script>
-import footer from './components/footer.vue';
 
-export default{
-  components:{
-    footer
-  }
-}
-</script>
 <script>
 export default {
   data() {
