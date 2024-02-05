@@ -1,11 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
 import Foods from '../views/Foods.vue';
 import FoodD from '../views/FoodD.vue';
 
-Vue.use(VueRouter)
-import { createRouter, createWebHistory } from 'vue-router';
+
 const routes = [
   {
     path: '/',
@@ -30,7 +28,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
