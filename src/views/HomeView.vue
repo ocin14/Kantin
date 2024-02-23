@@ -11,6 +11,8 @@
       <div class="col">
         <router-link to="/foods" class="btn btn-success float-right"><b-icon-eye></b-icon-eye> <span></span>Lihat semua</router-link>
       </div>
+      
+      <modal title="hello" message="tes"><button @click="popupShow">tampil modal</button></modal>
     </div>
 
     <div class="row mb-4">
@@ -25,11 +27,19 @@
 
 <script>
 // @ is an alias to /src
-
+import modal from '@/components/modal.vue'
+let myModal;
+onMounted(()=>{
+  myModal = new bootstrap.Modal(document.getElementById("alert"))
+})
+const popupShow = ()=>{
+  myModal.show();
+}
 import Navbar from '@/components/Navbar.vue'
 import Hero from '@/components/Hero.vue'
 import Cardproduct from '@/components/Cardproduct.vue';
 import axios from 'axios';
+import { onMounted } from 'vue';
 export default {
   name: 'HomeView',
   components: {
@@ -50,13 +60,15 @@ export default {
   mounted() {
   axios.get('http://localhost:3000/best-products')
     .then((response) => 
-      // handle success
+      // handle success`
       this.setProducts(response.data))
     .catch((error) =>  console.log(error))
       // handle error
      
   
 },
+
+
 
 };
 </script>

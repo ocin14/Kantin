@@ -1,4 +1,7 @@
 <template>
+    <li class="nav-item">
+    <a :class="${kelas}" :href="/${link}">{{ label }}</a>
+    </li>
 <div class="container">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -12,7 +15,7 @@
           <router-link class="nav-link" to="/">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/Foods">Foods</router-link>
+          <router-link class="nav-link" to="Foods">Foods</router-link>
         </li>
       </ul>
       

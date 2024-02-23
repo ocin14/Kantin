@@ -62,7 +62,7 @@ export default {
         axios
         .post("http://localhost:3000/keranjangs", this.pesan)
         .then(()=>{
-            console.log("berhasil");
+            toast.success('Ini adalah pesan toast sukses!');
         })
         .catch((error)=> console.log(error))
     }
